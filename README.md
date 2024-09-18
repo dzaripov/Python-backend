@@ -1,2 +1,2 @@
 # Python-backend
-Python backend course in ITMO repository with homeworks 
+Python backend course in ITMO
