@@ -13,17 +13,17 @@ def fib(n):
     return arr[n]
 
 
-async def send_response(send, status, body, content_type='text/plain'):
+async def send_response(send, status, body, content_type=b'application/json'):
     await send({
         'type': 'http.response.start',
         'status': status,
         'headers': [
-            [b'content-type', content_type.encode('utf-8')],
+            [b'content-type', content_type],
         ],
     })
     await send({
         'type': 'http.response.body',
-        'body': str(body).encode('utf-8')
+        'body': json.dumps(body).encode('utf-8')
     })
 
 
